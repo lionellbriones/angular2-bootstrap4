@@ -1,0 +1,24 @@
+<h2>Stocks</h2>
+{{title}}
+
+<ul>
+    <li *ngFor="let stock of stocks">
+        {{stock}}
+    </li>
+</ul>
+
+<hr>
+
+<ul *ngIf="stockMarkets.length > 0">
+    <li *ngFor="let stockMarket of stockMarkets">
+        {{stockMarket}}
+    </li>
+</ul>
+
+<hr>
+
+<div [ngSwitch]="market">
+    <div *ngSwitchCase="'NYSE'">New York Stock Exchange</div>
+    <div *ngSwitchCase="'LSE'">London Stock Exchange</div>
+    <div *ngSwitchDefault>Could not find a match</div>
+</div>
